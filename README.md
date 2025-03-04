@@ -103,6 +103,11 @@ Here's the list of all available client modules and their methods in relation to
 | `deleteResource` | [Delete Calendar Resource](https://highlevel.stoplight.io/docs/integrations/ca9afd52d4d0e-delete-calendar-resource) |
 | `findResourcesByType` | [List Calendar Resources](https://highlevel.stoplight.io/docs/integrations/e3a7d63a0134b-list-calendar-resources) |
 | `createCalendarResource` | [Create Calendar Resource](https://highlevel.stoplight.io/docs/integrations/cad3af068e0e0-create-calendar-resource) |
+| `findNotifications` | [Get Notifications](https://highlevel.stoplight.io/docs/integrations/8a5a55426e404-get-notifications) |
+| `createNotifications` | [Create Notification](https://highlevel.stoplight.io/docs/integrations/fbf84496c5327-create-notification) |
+| `findNotificationById` | [Get Notification](https://highlevel.stoplight.io/docs/integrations/3a295c24b3d40-get-notification) |
+| `updateNotification` | [Update Notification](https://highlevel.stoplight.io/docs/integrations/ab6b01fe746d2-update-notification) |
+| `removeNotification` | [Delete A Calendar Notification](https://highlevel.stoplight.io/docs/integrations/3287e5de5babf-delete-a-calendar-notification) |
 
 ### CampaignsClient
 | Client Method | API Documentation Reference |

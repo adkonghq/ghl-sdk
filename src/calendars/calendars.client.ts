@@ -30,6 +30,10 @@ import {
   UpdateCalendarResourceDto,
   CalendarResourceSearchParams,
   CreateCalendarResourceDto,
+  CalendarNotificationSearchParams,
+  CalendarNotificationDetails,
+  CalendarNotificationDto,
+  CalendarNotificationOperationResponse,
 } from './calendars.types';
 
 export class CalendarsClient extends GhlClient {
@@ -270,6 +274,55 @@ export class CalendarsClient extends GhlClient {
     return this.post<CalendarResourceResponse>(
       `/calendars/resources/${resourceType}`,
       dto,
+    );
+  }
+
+  public async findNotifications(
+    calendarId: string,
+    params: CalendarNotificationSearchParams,
+  ): Promise<CalendarNotificationDetails[]> {
+    return this.get<CalendarNotificationDetails[]>(
+      `/calendars/${calendarId}/notifications`,
+      { params: { ...params, altType: 'calendar', altId: calendarId } },
+    );
+  }
+
+  public async createNotifications(
+    calendarId: string,
+    dto: CalendarNotificationDto[],
+  ): Promise<CalendarNotificationDetails[]> {
+    return this.post<CalendarNotificationDetails[]>(
+      `/calendars/${calendarId}/notifications`,
+      dto,
+    );
+  }
+
+  public async findNotificationById(
+    calendarId: string,
+    notificationId: string,
+  ): Promise<CalendarNotificationDetails> {
+    return this.get<CalendarNotificationDetails>(
+      `/calendars/${calendarId}/notifications/${notificationId}`,
+    );
+  }
+
+  public async updateNotification(
+    calendarId: string,
+    notificationId: string,
+    dto: CalendarNotificationDto,
+  ): Promise<CalendarNotificationOperationResponse> {
+    return this.put<CalendarNotificationOperationResponse>(
+      `/calendars/${calendarId}/notifications/${notificationId}`,
+      dto,
+    );
+  }
+
+  public async removeNotification(
+    calendarId: string,
+    notificationId: string,
+  ): Promise<CalendarNotificationOperationResponse> {
+    return this.delete<CalendarNotificationOperationResponse>(
+      `/calendars/${calendarId}/notifications/${notificationId}`,
     );
   }
 }

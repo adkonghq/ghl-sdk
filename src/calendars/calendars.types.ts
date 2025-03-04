@@ -606,3 +606,71 @@ export type UpdateCalendarResourceDto = {
   calendarIds: string[] /** Calendar IDs (["Jsj0xnlDDjw0SuvX1J13","oCM5feFC86FAAbcO7lJK"]) */;
   isActive: boolean /** Is Active (true) */;
 };
+
+export type CalendarNotificationSearchParams = {
+  deleted?: boolean;
+  isActive?: boolean;
+  limit?: number;
+  skip?: number;
+};
+
+export type CalendarNotificationReceiverType =
+  | 'contact'
+  | 'guest'
+  | 'assignedUser'
+  | 'emails';
+
+export type CalendarNotificationChannel = 'email' | 'inApp';
+
+export type CalendarNotificationType =
+  | 'booked'
+  | 'confirmation'
+  | 'cancellation'
+  | 'reminder'
+  | 'followup'
+  | 'reschedule';
+
+export type CalendarNotificationTime = {
+  timeOffset: number;
+  unit: string;
+};
+
+export type CalendarNotificationDetails = {
+  _id: string;
+  altType: 'calendar';
+  calendarId: string;
+  receiverType: CalendarNotificationReceiverType;
+  receiverEmailIds: string[];
+  channel: CalendarNotificationChannel;
+  notificationType: CalendarNotificationType;
+  isActive: boolean;
+  templateId: string;
+  body: string;
+  subject: string;
+  afterTime: CalendarNotificationTime[];
+  beforeTime: CalendarNotificationTime[];
+  selectedUsers: string[];
+  deleted: boolean;
+};
+
+export type CalendarNotificationDto = {
+  altType: 'calendar';
+  altId: string;
+  receiverType: CalendarNotificationReceiverType;
+  channel: CalendarNotificationChannel;
+  notificationType: CalendarNotificationType;
+  isActive?: boolean;
+  templateId?: string;
+  body?: string;
+  subject?: string;
+  afterTime?: CalendarNotificationTime;
+  beforeTime?: CalendarNotificationTime;
+  additionalEmailIds?: string[];
+  selectedUsers?: string[];
+  fromAddress?: string;
+  fromName?: string;
+};
+
+export type CalendarNotificationOperationResponse = {
+  message: string;
+};
