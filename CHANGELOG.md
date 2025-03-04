@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/adkonghq/ghl-sdk/compare/v1.0.2...v1.1.0) (2025-03-04)
+
+
+### Features
+
+* calendar notifications ([8e65379](https://github.com/adkonghq/ghl-sdk/commit/8e65379f282c13161cbcaba48d8973ac519c4352))
+
 ## [1.0.2](https://github.com/adkonghq/ghl-sdk/compare/v1.0.1...v1.0.2) (2025-03-01)
 
 
