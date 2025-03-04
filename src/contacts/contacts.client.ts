@@ -57,7 +57,9 @@ export class ContactsClient extends GhlClient {
     businessId: string,
     params: BusinessContactSearchParams,
   ): Promise<FindContactsResponse> {
-    return this.get(`/contacts/business/${businessId}`, { params });
+    return this.get<FindContactsResponse>(`/contacts/business/${businessId}`, {
+      params,
+    });
   }
 
   public async create(dto: CreateContactDto): Promise<ContactResponse> {

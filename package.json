@@ -6,6 +6,15 @@
     "access": "public"
   },
   "keywords": [
+    "HighLevel",
+    "High Level",
+    "GoHighLevel",
+    "Go HighLevel",
+    "Go High Level",
+    "LeadConnector",
+    "Lead Connector",
+    "LC",
+    "CRM",
     "ghl",
     "go",
     "high",
@@ -22,9 +31,7 @@
     "types",
     "declaration",
     "nodejs",
-    "amd",
-    "requirejs",
-    "umd",
+    "GHL",
     "promises",
     "retry",
     "axios"
