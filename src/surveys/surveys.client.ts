@@ -12,7 +12,7 @@ export class SurveysClient extends GhlClient {
   }
 
   public async find(params: SurveySearchParams): Promise<ListSurveysResponse> {
-    return this.get<ListSurveysResponse>('/surveys', { params });
+    return this.get<ListSurveysResponse>('/surveys/', { params });
   }
 
   public async findSubmissions(

@@ -38,7 +38,7 @@ export class ObjectsClient extends GhlClient {
   public async findByLocation(
     locationId: string,
   ): Promise<ListCustomObjectsResponse> {
-    return this.get<ListCustomObjectsResponse>(`/objects`, {
+    return this.get<ListCustomObjectsResponse>('/objects/', {
       params: { locationId },
     });
   }

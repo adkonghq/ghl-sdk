@@ -9,7 +9,7 @@ export class WorkflowsClient extends GhlClient {
   public async findByLocationId(
     locationId: string,
   ): Promise<ListWorkflowsResponse> {
-    return this.get<ListWorkflowsResponse>('/workflows', {
+    return this.get<ListWorkflowsResponse>('/workflows/', {
       params: { locationId },
     });
   }

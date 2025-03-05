@@ -14,7 +14,7 @@ export class SnapshotsClient extends GhlClient {
   }
 
   public async find(companyId: string): Promise<ListSnapshotsResponse> {
-    return this.get<ListSnapshotsResponse>('/snapshots', {
+    return this.get<ListSnapshotsResponse>('/snapshots/', {
       params: { companyId },
     });
   }

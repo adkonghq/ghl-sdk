@@ -67,6 +67,6 @@ export class CustomFieldsClient extends GhlClient {
   }
 
   public async create(dto: CreateCustomFieldDto): Promise<CustomFieldResponse> {
-    return this.post<CustomFieldResponse>('/custom-fields', dto);
+    return this.post<CustomFieldResponse>('/custom-fields/', dto);
   }
 }

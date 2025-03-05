@@ -37,10 +37,10 @@ export class CustomMenusClient extends GhlClient {
   public async find(
     params: CustomMenuSearchParams,
   ): Promise<ListCustomMenusResponse> {
-    return this.get<ListCustomMenusResponse>('/custom-menus', { params });
+    return this.get<ListCustomMenusResponse>('/custom-menus/', { params });
   }
 
   public async create(dto: CreateCustomMenuDto): Promise<CustomMenuResponse> {
-    return this.post<CustomMenuResponse>('/custom-menus', dto);
+    return this.post<CustomMenuResponse>('/custom-menus/', dto);
   }
 }

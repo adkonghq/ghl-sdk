@@ -15,7 +15,7 @@ export class BusinessesClient extends GhlClient {
   public async findByLocation(
     locationId: string,
   ): Promise<ListBusinessesResponse> {
-    return this.get<ListBusinessesResponse>('/businesses', {
+    return this.get<ListBusinessesResponse>('/businesses/', {
       params: { locationId },
     });
   }
@@ -27,7 +27,7 @@ export class BusinessesClient extends GhlClient {
   public async create(
     dto: CreateBusinessDto,
   ): Promise<CreateUpdateBusinessResponse> {
-    return this.post<CreateUpdateBusinessResponse>('/businesses', dto);
+    return this.post<CreateUpdateBusinessResponse>('/businesses/', dto);
   }
 
   public async update(

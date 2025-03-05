@@ -45,7 +45,7 @@ export class ConversationsClient extends GhlClient {
   public async create(
     dto: CreateConversationDto,
   ): Promise<ConversationActionResponse> {
-    return this.post('/conversations', dto);
+    return this.post('/conversations/', dto);
   }
 
   public async search(

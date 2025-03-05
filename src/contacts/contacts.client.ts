@@ -63,13 +63,13 @@ export class ContactsClient extends GhlClient {
   }
 
   public async create(dto: CreateContactDto): Promise<ContactResponse> {
-    return this.post<ContactResponse>('/contacts', dto);
+    return this.post<ContactResponse>('/contacts/', dto);
   }
 
   public async find(
     params: ContactLegacySearchParams,
   ): Promise<FindContactsResponse> {
-    return this.get<FindContactsResponse>('/contacts', {
+    return this.get<FindContactsResponse>('/contacts/', {
       params,
     });
   }

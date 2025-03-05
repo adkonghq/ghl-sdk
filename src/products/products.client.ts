@@ -39,13 +39,13 @@ export class ProductsClient extends GhlClient {
   }
 
   public async create(dto: ProductDto): Promise<Product> {
-    return this.post<Product>('/products', dto);
+    return this.post<Product>('/products/', dto);
   }
 
   public async find(
     params: ProductSearchParams,
   ): Promise<ListProductsResponse> {
-    return this.get<ListProductsResponse>('/products', { params });
+    return this.get<ListProductsResponse>('/products/', { params });
   }
 
   public async createPrice(

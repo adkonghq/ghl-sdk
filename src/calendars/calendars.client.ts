@@ -44,7 +44,7 @@ export class CalendarsClient extends GhlClient {
   public async find(
     params: CalendarSearchParams,
   ): Promise<ListCalendarsResponse> {
-    return this.get<ListCalendarsResponse>('/calendars', { params });
+    return this.get<ListCalendarsResponse>('/calendars/', { params });
   }
 
   public async findById(id: string): Promise<GetCalendarResponse> {
@@ -52,7 +52,7 @@ export class CalendarsClient extends GhlClient {
   }
 
   public async create(dto: CreateCalendarDto): Promise<GetCalendarResponse> {
-    return this.post<GetCalendarResponse>('/calendars', dto);
+    return this.post<GetCalendarResponse>('/calendars/', dto);
   }
 
   public async update(

@@ -28,6 +28,6 @@ export class LinksClient extends GhlClient {
   }
 
   public async create(dto: CreateLinkDto): Promise<LinkResponse> {
-    return this.post<LinkResponse>('/links', dto);
+    return this.post<LinkResponse>('/links/', dto);
   }
 }

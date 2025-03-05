@@ -97,13 +97,13 @@ export class InvoicesClient extends GhlClient {
   }
 
   public async create(dto: CreateInvoiceDto): Promise<CreateInvoiceResponse> {
-    return this.post<CreateInvoiceResponse>('/invoices', dto);
+    return this.post<CreateInvoiceResponse>('/invoices/', dto);
   }
 
   public async find(
     params: InvoicesSearchParams,
   ): Promise<ListInvoicesResponse> {
-    return this.get<ListInvoicesResponse>('/invoices', { params });
+    return this.get<ListInvoicesResponse>('/invoices/', { params });
   }
 
   public async createTemplate(

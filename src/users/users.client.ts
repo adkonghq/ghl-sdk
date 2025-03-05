@@ -27,11 +27,11 @@ export class UsersClient extends GhlClient {
   }
 
   public async findByLocation(locationId: string): Promise<ListUsersResponse> {
-    return this.get<ListUsersResponse>('/users', { params: { locationId } });
+    return this.get<ListUsersResponse>('/users/', { params: { locationId } });
   }
 
   public async create(dto: CreateUserDto): Promise<User> {
-    return this.post<User>('/users', dto);
+    return this.post<User>('/users/', dto);
   }
 
   public async search(params: UserSearchParams): Promise<SearchUsersResponse> {

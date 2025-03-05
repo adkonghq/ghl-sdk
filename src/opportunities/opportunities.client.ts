@@ -54,7 +54,7 @@ export class OpportunitiesClient extends GhlClient {
   }
 
   public async create(dto: CreateOpportunityDto): Promise<OpportunityResponse> {
-    return this.post<OpportunityResponse>('/opportunities', dto);
+    return this.post<OpportunityResponse>('/opportunities/', dto);
   }
 
   public async search(

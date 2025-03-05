@@ -18,7 +18,7 @@ export class FormsClient extends GhlClient {
   }
 
   public async find(params: FormSearchParams): Promise<ListFormsResponse> {
-    return this.get<ListFormsResponse>('/forms', {
+    return this.get<ListFormsResponse>('/forms/', {
       params,
     });
   }

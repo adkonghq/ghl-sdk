@@ -7,6 +7,6 @@ export class CampaignsClient extends GhlClient {
   }
 
   public async find(params: CampaignSearchParams): Promise<CampaignsResponse> {
-    return this.get<CampaignsResponse>('/campaigns', { params });
+    return this.get<CampaignsResponse>('/campaigns/', { params });
   }
 }

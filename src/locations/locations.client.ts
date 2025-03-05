@@ -57,7 +57,7 @@ export class LocationsClient extends GhlClient {
   public async create(
     dto: CreateLocationDto,
   ): Promise<CreateUpdateLocationResponse> {
-    return this.post<CreateUpdateLocationResponse>('/locations', dto);
+    return this.post<CreateUpdateLocationResponse>('/locations/', dto);
   }
 
   public async search(
