@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/adkonghq/ghl-sdk/compare/v1.1.2...v1.1.3) (2025-03-05)
+
+
+### Bug Fixes
+
+* error handling ([372088e](https://github.com/adkonghq/ghl-sdk/commit/372088e4bb10807c938946cc9e9a0e1719e1b3fb))
+* url pattern ([c67fa20](https://github.com/adkonghq/ghl-sdk/commit/c67fa2047940355f7a96f8314b5cb4c3afcd7f23))
+
 ## [1.1.2](https://github.com/adkonghq/ghl-sdk/compare/v1.1.1...v1.1.2) (2025-03-05)
 
 
