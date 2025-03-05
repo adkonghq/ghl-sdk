@@ -140,5 +140,5 @@ export type ListProductStats = {
 
 export type ListProductsResponse = {
   products: Product[] /** An array of products */;
-  total: ListProductStats /** The stats for the product list */;
+  total: ListProductStats[] /** The stats for the product list */;
 };
