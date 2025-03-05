@@ -18,6 +18,7 @@ import { LocationsClient } from './locations/locations.client';
 import { MediaClient } from './media/media.client';
 import { OAuthClient } from './oauth/oauth.client';
 import { ObjectsClient } from './objects/objects.client';
+import { OpportunitiesClient } from './opportunities/opportunities.client';
 import { PaymentsClient } from './payments/payments.client';
 import { ProductsClient } from './products/products.client';
 import { SaasClient } from './saas/saas.client';
@@ -47,6 +48,7 @@ export {
   MediaClient,
   OAuthClient,
   ObjectsClient,
+  OpportunitiesClient,
   PaymentsClient,
   ProductsClient,
   SaasClient,
@@ -77,6 +79,7 @@ export type * from './locations/locations.types';
 export type * from './media/media.types';
 export type * from './oauth/oauth.types';
 export type * from './objects/objects.types';
+export type * from './opportunities/opportunities.types';
 export type * from './payments/payments.types';
 export type * from './products/products.types';
 export type * from './saas/saas.types';

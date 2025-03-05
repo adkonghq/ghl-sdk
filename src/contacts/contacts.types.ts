@@ -1,9 +1,4 @@
-export enum OpportunityStatus {
-  Open = 'open',
-  Won = 'won',
-  Lost = 'lost',
-  Abandoned = 'abandoned',
-}
+import type { OpportunityStatus } from 'src/opportunities/opportunities.types';
 
 export type DuplicateContactSearchParams = {
   email?: string;
