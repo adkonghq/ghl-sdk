@@ -49,7 +49,7 @@
     "url": "git://github.com/adkonghq/ghl-sdk.git"
   },
   "license": "MIT",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
