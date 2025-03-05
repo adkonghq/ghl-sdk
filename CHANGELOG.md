@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/adkonghq/ghl-sdk/compare/v1.1.0...v1.1.1) (2025-03-05)
+
+
+### Bug Fixes
+
+* export opportunities client module ([3953dba](https://github.com/adkonghq/ghl-sdk/commit/3953dba21e791c9826ee60a38f3522f84d355265))
+
 # [1.1.0](https://github.com/adkonghq/ghl-sdk/compare/v1.0.2...v1.1.0) (2025-03-04)
 
 
