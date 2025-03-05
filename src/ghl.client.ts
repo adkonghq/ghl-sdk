@@ -31,9 +31,16 @@ export class GhlClient {
   private handleError(error: AxiosError): Promise<never> {
     const { response, request } = error;
 
-    if (response && response.data) {
-      return Promise.reject(response.data);
-    } else if (request) {
+    if (response) {
+      if (response.data) {
+        return Promise.reject(response.data);
+      }
+      if (response.statusText) {
+        return Promise.reject({ message: response.statusText });
+      }
+    }
+
+    if (request) {
       return Promise.reject({ message: `Could not reach ${this.baseUrl}` });
     }
 
