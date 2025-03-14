@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/adkonghq/ghl-sdk/compare/v1.1.4...v1.1.5) (2025-03-14)
+
+
+### Bug Fixes
+
+* contact search response ([85897a3](https://github.com/adkonghq/ghl-sdk/commit/85897a3447b5baa5bfd2dbc418327a694ec7118d))
+
 ## [1.1.4](https://github.com/adkonghq/ghl-sdk/compare/v1.1.3...v1.1.4) (2025-03-05)
 
 
