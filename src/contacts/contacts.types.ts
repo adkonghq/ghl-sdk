@@ -54,7 +54,7 @@ export type ContactTagsDto = {
 };
 
 export type Contact = {
-  id?: string /** The ID of the contact (102goXVW3lIExEQPOnd3) */;
+  id: string /** The ID of the contact (102goXVW3lIExEQPOnd3) */;
   phoneLabel?: string /** The label of the phone number (Mobile) */;
   country?: string /** The country of the contact (United States) */;
   address?: string /** The address of the contact (123 Main Street) */;
