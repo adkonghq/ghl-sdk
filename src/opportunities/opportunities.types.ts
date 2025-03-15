@@ -13,7 +13,7 @@ export type OpportunitiesCFResponseSchema = {
 };
 
 export type Opportunity = {
-  id?: string /** Opportunity ID */;
+  id: string /** Opportunity ID */;
   name?: string /** Opportunity name */;
   monetaryValue?: number /** Monetary value of the opportunity */;
   pipelineId?: string /** Pipeline ID */;
