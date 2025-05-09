@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/adkonghq/ghl-sdk/compare/v1.1.6...v1.2.0) (2025-05-09)
+
+
+### Features
+
+* rate limit handler ([7b81ec4](https://github.com/adkonghq/ghl-sdk/commit/7b81ec4e1c1b5adfa5f0efcdc4cff01c6be1dacb))
+
 ## [1.1.6](https://github.com/adkonghq/ghl-sdk/compare/v1.1.5...v1.1.6) (2025-03-15)
 
 
