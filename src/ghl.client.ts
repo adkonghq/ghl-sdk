@@ -4,6 +4,8 @@ import axiosRetry from 'axios-retry';
 export class GhlClient {
   private readonly baseUrl = 'https://services.leadconnectorhq.com';
   private axiosInstance: AxiosInstance;
+  private rateLimitDaily = 200000;
+  private rateLimitBurst = 100;
 
   constructor(accessToken?: string) {
     this.axiosInstance = axios.create({
@@ -18,7 +20,21 @@ export class GhlClient {
     });
 
     this.axiosInstance.interceptors.response.use(
-      (response) => response.data,
+      (response) => {
+        if (response.headers['x-ratelimit-daily-remaining']) {
+          this.rateLimitDaily = parseInt(
+            response.headers['x-ratelimit-daily-remaining'],
+            10,
+          );
+        }
+        if (response.headers['x-ratelimit-remaining']) {
+          this.rateLimitBurst = parseInt(
+            response.headers['x-ratelimit-remaining'],
+            10,
+          );
+        }
+        return response.data;
+      },
       (error) => this.handleError(error),
     );
 
@@ -47,7 +63,17 @@ export class GhlClient {
     return Promise.reject({ message: error.message });
   }
 
+  private async handleRateLimit(): Promise<void> {
+    if (this.rateLimitDaily < 1) {
+      throw new Error('Daily ratelimit has been reached');
+    }
+    if (this.rateLimitBurst < 10) {
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+    }
+  }
+
   protected async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    await this.handleRateLimit();
     return this.axiosInstance.get<T>(url, config) as T;
   }
 
@@ -57,6 +83,7 @@ export class GhlClient {
     config?: AxiosRequestConfig,
   ): Promise<T> {
     const defaultHeaders = { 'content-type': 'application/json' };
+    await this.handleRateLimit();
     return this.axiosInstance.post<T>(url, data, {
       ...config,
       headers: { ...defaultHeaders, ...(config?.headers || {}) },
@@ -69,6 +96,7 @@ export class GhlClient {
     config?: AxiosRequestConfig,
   ): Promise<T> {
     const defaultHeaders = { 'content-type': 'application/json' };
+    await this.handleRateLimit();
     return this.axiosInstance.put<T>(url, data, {
       ...config,
       headers: { ...defaultHeaders, ...(config?.headers || {}) },
@@ -81,6 +109,7 @@ export class GhlClient {
     config?: AxiosRequestConfig,
   ): Promise<T> {
     const defaultHeaders = { 'content-type': 'application/json' };
+    await this.handleRateLimit();
     return this.axiosInstance.patch<T>(url, data, {
       ...config,
       headers: { ...defaultHeaders, ...(config?.headers || {}) },
@@ -91,6 +120,7 @@ export class GhlClient {
     url: string,
     config?: AxiosRequestConfig,
   ): Promise<T> {
+    await this.handleRateLimit();
     return this.axiosInstance.delete<T>(url, config) as T;
   }
 }
